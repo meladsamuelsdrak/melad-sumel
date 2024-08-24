@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    background: #0162be;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .navbar {
+    width: 100vw;
+    height: 74px;
+    background-color:#0162be;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .navbar .logo img {
+     width: 65px;
+     height: 65px;
+     margin-top: 25px;
+     margin-left: 30px;
+  }
+   
+  .navbar #toggler {
+    display: none;
+  }
+  
+  .navbar .burger {
+    position: relative;
+    width: 56px;
+    height: 55px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .navbar .bun {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 9px;
+    left: 9px;
+    transition: transform 0.18s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.15s;
+  }
+  
+  .navbar .bun__crust {
+    position: absolute;
+    display: block;
+    width: 17px;
+    height: 1px;
+    background-color: #fff;
+    border-radius: 1px;
+    left: 7px;
+    transition: transform 0.1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) 0.2s;
+  }
+  
+  .navbar .bun__crust--top {
+    top: 14px;
+  
+    transform: translateY(-3px);
+  }
+  
+  .navbar .bun__crust--bottom {
+    bottom: 14px;
+  
+    transform: translateY(3px);
+  }
+      
+  .navbar #toggler:checked + .burger .bun--top {
+    transform: rotate(45deg);
+  }
+  
+  .navbar #toggler:checked + .burger .bun--bottom {
+    transform: rotate(-45deg);
+  }
+  
+  .navbar #toggler:checked + .burger .bun__crust--top,
+  .navbar #toggler:checked + .burger .bun__crust--bottom {
+    transform: none;
+    transition: transform 0.1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  }
+  .navbar #toggler:checked ~ ul {
+    left: 50%;
+  }
+  .navbar ul {
+    display: flex;
+    list-style-type: none;
+    transition: 0.4s ease-in-out;
+    margin-right: 40px;
+  }
+  .navbar ul li {
+    padding: 0 20px;
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+  }
+  .navbar ul li a:hover {
+    color: red;
+  }
+  
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+.contenttex{
+    width: 500px;
+    height:250px;
+    margin-left: 55px;
+    margin-top: 80px;
+
+}
+.contenttex span{
+font-size: 45px;
+font-weight: 700;
+ 
+}
+.contenttex .btn{
+    padding:7px 20px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.contenttex .btn:hover{
+    background-color: red;
+    color: white;
+}
+.content img{
+    width: 170px;
+    height: 300px;
+    margin-top: 50px;
+    margin-right: 120px;
+    animation: animation1 2s ease-out;
+}
+ .social{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 70px;
+    animation: animation2 2s ease-out;
+ }
+ .social a{
+    color: white;
+ }
+ .social a:hover{
+    color: red;
+ }
+
+
+ @keyframes animation1{
+    0%{
+        transform: translateX(500px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+ }
+ @keyframes animation2{
+    0%{
+        transform: translateY(300px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+ }
+  /*For Responsiveness */
+  @media (max-width: 760px) {
+    .navbar .burger {
+      display: block;
+    }
+    .navbar ul {
+      position: absolute;
+      flex-direction: column;
+      align-items: center;
+      top: 90px;
+      left: -100%;
+      transform: translateX(-20%);
+  
+      width: 45%;
+      background: #1b1b1b;  
+    }
+    .navbar ul li {
+      margin: 1.5rem 0;
+    }
+    .content{
+      display: block;
+    }
+    .contenttex{
+      width: 350px;
+    }
+    .content img{
+      width: 150px;
+      height: 250px;
+      margin-left: 155px;
+    }
+    .social{
+      margin-bottom: 30px;
+    }
+    @keyframes animation1{
+      0%{
+          transform: translateX(300px);
+      }
+      100%{
+          transform: translateX(0);
+      }
+   }
+   @keyframes animation2{
+      0%{
+          transform: translateY(150px);
+      }
+      100%{
+          transform: translateY(0);
+      }
+   }
+  }
+  
